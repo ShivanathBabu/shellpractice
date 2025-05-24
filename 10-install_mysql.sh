@@ -14,6 +14,7 @@ validate() {
     else
     echo "$2 failed to install"
     exit 1
+    fi
 }
 
 dnf list installed mysql
