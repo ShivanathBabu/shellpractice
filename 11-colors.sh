@@ -9,7 +9,7 @@ if [ $userid -ne 0 ]
 then
 echo -e "$R ERROR: RUN WITH ROOT ACCESS $N"
 else
-echo -e "$G you are running with root access"
+echo -e "$G you are running with root access $N"
 fi
 
 validate() {
