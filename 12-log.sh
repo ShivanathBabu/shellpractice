@@ -12,19 +12,19 @@ echo "script started executing at: $(date)"| tee -a $log_file
 
 if [ $userid -ne 0 ]
 then
-echo "$R ERROR: Run with sudo access $N" | tee -a $log_file
+echo -e "$R ERROR: Run with sudo access $N" | tee -a $log_file
 exit 1
 else
-echo "$G you are in sudo access $N" | tee -a $log_file
+echo -e "$G you are in sudo access $N" | tee -a $log_file
 fi
 package=("mysql" "python" "nginx" "httpd")
 validate ()
 {
     if [ $1 -ne 0]
     then 
-    echo "$G $2 is succesfully installed $N" | tee -a $log_file
+    echo -e "$G $2 is succesfully installed $N" | tee -a $log_file
     else
-    echo "$R $2 failed to install $N" | tee -a $log_file
+    echo -e "$R $2 failed to install $N" | tee -a $log_file
     exit 1
     fi
 }
@@ -34,11 +34,11 @@ do
 dnf list installed $package &>>$log_file 
 if[ $? -ne 0 ]
 then
-echo "$Y $package not yet installed $N" | tee -a $log_file
+echo -e "$Y $package not yet installed $N" | tee -a $log_file
 dnf install $package -y &>>$log_file
 validate $? "mysql"
 else
-echo "$G $package already installed $N" | tee -a $log_file
+echo -e "$G $package already installed $N" | tee -a $log_file
 fi
 done
 
