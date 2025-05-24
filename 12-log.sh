@@ -7,6 +7,7 @@ N="\e[0m"
 logs_folder="/var/log/shellscript-logs"
 script_file=$(echo $0 | cut -d "." -f1)
 log_file="$logs_folder/$script_file.log"
+packages=("mysql" "python" "nginx" "httpd")
 mkdir -p $logs_folder
 echo "script started executing at: $(date)"| tee -a $log_file
 
@@ -17,7 +18,8 @@ exit 1
 else
 echo -e "$G you are in sudo access $N" | tee -a $log_file
 fi
-package=("mysql" "python" "nginx" "httpd")
+
+
 validate ()
 {
     if [ $1 -ne 0]
@@ -31,14 +33,14 @@ validate ()
 
 for package in $@
 do
-dnf list installed $package &>>$log_file 
+dnf list installed $packages &>>$log_file 
 if [ $? -ne 0 ]
 then
-echo -e "$Y $package not yet installed $N" | tee -a $log_file
-dnf install $package -y &>>$log_file
+echo -e "$Y $packages not yet installed $N" | tee -a $log_file
+dnf install $packages -y &>>$log_file
 validate $? "mysql"
 else
-echo -e "$G $package already installed $N" | tee -a $log_file
+echo -e "$G $packages already installed $N" | tee -a $log_file
 fi
 done
 
