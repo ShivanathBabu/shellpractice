@@ -38,7 +38,7 @@ if [ $? -ne 0 ]
 then
 echo -e "$Y $package not yet installed $N" | tee -a $log_file
 dnf install $package -y &>>$log_file
-validate $? "mysql"
+validate $? "$package"
 else
 echo -e "$G $package already installed $N" | tee -a $log_file
 fi
