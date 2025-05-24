@@ -20,7 +20,7 @@ echo -e "$G you are in sudo access $N" | tee -a $log_file
 fi
 
 
-validate ()
+validate()
 {
     if [ $1 -ne 0]
     then 
