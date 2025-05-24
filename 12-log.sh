@@ -31,7 +31,7 @@ validate()
     fi
 }
 
-for package in $@
+for package in ${packages[@]}
 do
 dnf list installed $package &>>$log_file 
 if [ $? -ne 0 ]
