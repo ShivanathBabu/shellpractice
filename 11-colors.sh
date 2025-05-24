@@ -15,9 +15,9 @@ fi
 validate() {
     if [ $1 -eq 0 ]
     then
-    echo "$G $2 SUCCESFULLY INSTALLED $N"
+    echo -e "$G $2 SUCCESFULLY INSTALLED $N"
     else
-    echo "$Y $2 ALREADY INSTALLED $N"
+    echo -e "$Y $2 ALREADY INSTALLED $N"
     fi
 }
 dnf list installed mysql
@@ -28,7 +28,7 @@ echo -e "$G mysql...installing $N"
 dnf install mysql -y
 validate $? "mysql"
 else
-echo " $Y already installed $N"
+echo -e " $Y already installed $N"
 fi
 
 
@@ -40,5 +40,5 @@ echo -e "$G nginx...installing $N"
 dnf install nginx -y
 validate $? "nginx"
 else
-echo "$Y already installed $N"
+echo -e "$Y already installed $N"
 fi
