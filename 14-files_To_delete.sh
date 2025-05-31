@@ -1,5 +1,5 @@
 #!/bin/bash
-source_dir=/home/user/ec2-user/app-logs
+source_dir=/home/ec2-user/app-logs
 files_to_delete=(find $source_dir . -name "*.log" -mtime +14)
 
 while IFS= read -r $filepath
