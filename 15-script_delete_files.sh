@@ -30,6 +30,7 @@ validate()
 }
 echo "script started at $(date)"
 files=$(find $source_dir -name "*.log" -mtime 14)
+validate $? "files deleted"
 while IFS= read -r filepath
 do
   rm -rf $filepath
