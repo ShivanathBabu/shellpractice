@@ -16,9 +16,9 @@ validate()
 {
     if [ $1 -ne 0 ]
     then
-    echo "$2..is $g sucess $n"
+    echo -e"$2..is $g sucess $n"
     else
-    echo "$2..is $r failure $n"
+    echo -e"$2..is $r failure $n"
     exit 1
     fi
 }
@@ -27,10 +27,10 @@ checkroot()
 {
     if [ $userid -ne 0]
     then
-    echo "$r error: Run with root access $n"
+    echo -e"$r error: Run with root access $n"
     exit 1
     else
-    echo "$g yo are in root access $n"
+    echo -e"$g yo are in root access $n"
 }
 
 
@@ -48,11 +48,13 @@ usage
 fi
 
 if [ ! -d $source_dir ]
-thenecho -e "$r source directory $source_dir does not exit. please check $n"
+then
+echo -e "$r source directory $source_dir does not exit. please check $n"
 exit 1
 fi
 if [ ! -d $desti_dir ]
-thenecho -e "$r source directory $desti_dir does not exit. please check $n"
+then
+echo -e "$r source directory $desti_dir does not exit. please check $n"
 exit 1
 fi
 
