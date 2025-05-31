@@ -7,8 +7,7 @@ logs_folder="/var/log/backup-logs"
 script_name=$( echo $0 | cut -d "." -f1 )
 log= "$logs_folder/$script_name.log"
 
-checkroot
-mkdir -p $logs_folder
+
 
 r="\e[31m"
 g="\e[32m"
@@ -37,6 +36,9 @@ checkroot()
     fi
 }
 
+checkroot
+mkdir -p $logs_folder
+
 
 
 
@@ -45,7 +47,7 @@ usage()
     echo -e "$r usage:: $n sh 16-backup.sh <source-dir> <destination-dir> <days(optional)>"
 }
 
-if [$# -lt 2]
+if [ $# -lt 2 ]
 then 
 usage
 fi
