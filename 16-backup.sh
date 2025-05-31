@@ -7,6 +7,9 @@ logs_folder="/var/log/backup-logs"
 script_name=$( echo $0 | cut -d "." -f1 )
 log= "$logs_folder/$script_name.log"
 
+checkroot
+mkdir -p $logs_folder
+
 r="\e[31m"
 g="\e[32m"
 y="\e[33m"
@@ -31,11 +34,11 @@ checkroot()
     exit 1
     else
     echo -e"$g yo are in root access $n"
+    fi
 }
 
 
-checkroot
-mkdir -p $logs_folder
+
 
 usage()
 {
