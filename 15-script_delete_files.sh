@@ -15,6 +15,7 @@ mkdir -p $logs_folder
 if [ $userid -ne 0 ]
 then
 echo -e "$r ERROR: run with sudo access $n"
+exit 1
 else
 echo "you are in sudo access"
 fi
@@ -26,6 +27,7 @@ validate()
     echo -e "$2 is $g succes $n"
     else
     echo -e "$2 is $r failure $n"
+    exit 1
     fi
 }
 echo "script started at $(date)"
