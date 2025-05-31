@@ -37,7 +37,7 @@ checkroot()
 }
 
 checkroot
-mkdir -p "$logs_folder"
+mkdir -p $logs_folder
 
 
 
