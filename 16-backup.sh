@@ -1,11 +1,11 @@
 #! bin/bash
-userid=(id -u)
+userid=$(id -u)
 source_dir=$1
 desti_dir=$2
 days=${3:-14}
 logs_folder="/var/log/backup-logs"
 script_name=$( echo $0 | cut -d "." -f1 )
-log= "$logs_folder/$script_name.log"
+log="$logs_folder/$script_name.log"
 
 
 
@@ -27,17 +27,17 @@ validate()
 
 checkroot()
 {
-    if [ $userid -ne 0]
+    if [ $userid -ne 0 ]
     then
-    echo -e"$r error: Run with root access $n"
+    echo -e "$r error: Run with root access $n"
     exit 1
     else
-    echo -e"$g yo are in root access $n"
+    echo -e "$g yo are in root access $n"
     fi
 }
 
 checkroot
-mkdir -p $logs_folder
+mkdir -p "$logs_folder"
 
 
 
