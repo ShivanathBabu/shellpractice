@@ -14,7 +14,7 @@ n="\e[0m"
 
 validate()
 {
-    if [ $1 -ne 0 ]
+    if [ $1 -eq 0 ]
     then
     echo -e"$2..is $g sucess $n"
     else
@@ -73,7 +73,7 @@ find $source_dir -name "*.log" -mtime +$days | zip -@ "$zip_file"
 if [ -f $zip_file ]
 then
 echo -e "$g successfully created zip file $n"
-while IFS=read -r filepath
+while IFS= read -r filepath
 do
 echo "deleting files: $filepath" | tee -a $log
 rm -rf $filepath
