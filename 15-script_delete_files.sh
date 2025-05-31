@@ -6,8 +6,8 @@ y="\e[33m"
 n="\e[0m"
 
 logs_folder="/var/log/shell-logs"
-script_folder=$( echo $0 | cut -d "." -f1)
-log_file= "$logs_folder/$script_folder.log"
+script_folder=$(echo $0 | cut -d "." -f1)
+Log_file="$logs_folder/$script_folder.log"
 source_dir=/home/ec2-user/app-logs
 
 mkdir -p $logs_folder
@@ -26,6 +26,7 @@ validate()
     echo -e "$2 is $g succes $n"
     else
     echo -e "$2 is $r failure $n"
+    fi
 }
 echo "script started at $(date)"
 files=$(find $source_dir -name "*.log" -mtime 14)
