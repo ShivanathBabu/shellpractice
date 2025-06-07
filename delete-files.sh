@@ -6,13 +6,14 @@ days=${3:-14}
 
 logs_folder="/var/log/script-logs"
 script_name=$(echo $0 | cut -d "." -f1)
-log_file= "$logs_folder/$script_name.log"
+log_file="$logs_folder/$script_name.log"
 r="\e[31m"
 g="\e[32m"
 y="\e[33m"
 n="\e[0m"
 
-validate(){
+validate()
+{
     if [ $1 -eq 0 ]
     then
     echo -e "$2...$g success $n"
