@@ -15,7 +15,7 @@
 #  done <<< $file_to_delete
 
 #!/bin/bash
-source_dir="/home/ec2-user/app-logs"
+source_dir=/home/ec2-user/app-logs
 
 find "$source_dir" -name "*.log" -mtime +14 | while IFS= read -r file
 do
