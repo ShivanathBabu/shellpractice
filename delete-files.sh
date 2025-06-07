@@ -35,8 +35,8 @@ checkroot
 mkdir -p $logs_folder
 
 usage(){
-    echo -e "$r usage: $n delete-files.sh <source-directory> <destination-directory> <days (optional)>"
-    exit 1
+     echo -e "$r USAGE:: $n sh 20-backup.sh <source-dir> <destination-dir> <days(optional)>"
+     exit 1
 }
 
 
