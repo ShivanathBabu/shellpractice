@@ -19,6 +19,7 @@ validate()
     echo -e "$2...$g success $n"
     else
     echo -e "$2...$r failure $n"
+    fi
 }
 
 checkroot(){
