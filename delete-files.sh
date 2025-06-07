@@ -34,8 +34,7 @@ checkroot(){
 checkroot
 mkdir -p $logs_folder
 
-usage()
-{
+usage(){
     echo -e "$r usage: $n delete-files.sh <source-directory> <destination-directory> <days (optional)>"
     exit 1
 }
