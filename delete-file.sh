@@ -4,5 +4,11 @@ file_to_delete=$(find $source_dir -name "*.log" -mtime +14)
 while IFS= read -r file
 do
   echo "deleting files: $file"  
- rm -rf $file
+  rm -rf $file
+  if [ $? -ne 0 ]
+  then
+  echo "failed to delete files"
+  else
+  echo  "successfully deleted files
+ 
  done <<< $file_to_delete
