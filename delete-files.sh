@@ -5,7 +5,7 @@ dest_dir=$2
 days=${3:-14}
 
 logs_folder="/var/log/script-logs"
-script_name=$(echo $0 | cut -d "." -f1)
+script_name=$(echo $0 | cut -d "." -f1 )
 log_file="$logs_folder/$script_name.log"
 r="\e[31m"
 g="\e[32m"
@@ -39,6 +39,8 @@ usage()
     echo -e "$r usage: $n delete-files.sh <source-directory> <destination-directory> <days (optional)>"
     exit 1
 }
+
+
 
 if [ $# -lt 2 ]
 then
