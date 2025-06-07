@@ -10,5 +10,6 @@ do
   echo "failed to delete files"
   else
   echo  "successfully deleted files
+  fi
  
  done <<< $file_to_delete
