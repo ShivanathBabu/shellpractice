@@ -8,6 +8,6 @@ do
  partition=$(echo $line | awk '{print $7f}')
  if [ $usage -ge $disk_thrishold ]
  then
-  msg+="high disk usage on $partition: $usage %"
+  msg+= "high disk usage on $partition: $usage %"
   fi
 done <<< $disk_usage
