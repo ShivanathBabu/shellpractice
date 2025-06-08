@@ -1,7 +1,8 @@
 #!/bin/bash
 disk_usage=$(df -hT | grep -v Filesystem)
 disk_thrishold=1
-msg=" "
+MSG=" "
+IP=$(curl http://169.254.169.254/latest/meta-data/local-ipv4)
 while IFS= read line
 do
  usage=$(echo $line | awk '{print $6f}' | cut -d "%" -f1 )
@@ -11,3 +12,5 @@ do
   msg+= "high disk usage on $partition: $usage %"
   fi
 done <<< $disk_usage
+
+sh mail.sh "devops team" "high disk usage" "$IP" "$MSG" "shivanath377@gmail.com" "Alert high disk usage"
