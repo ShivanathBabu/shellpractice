@@ -1,5 +1,5 @@
 #!/bin/bash
-disk_usage=$(dh -hT | grep -v Filesystem)
+disk_usage=$(df -hT | grep -v Filesystem)
 disk_thrishold=1
 msg=" "
 while IFS= read line
