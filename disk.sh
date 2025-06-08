@@ -6,8 +6,8 @@ IP=$(curl http://169.254.169.254/latest/meta-data/local-ipv4)
 
 while IFS= read line
 do
- usage=$(echo $line | awk '{print $6f}' | cut -d "%" -f1 )
- partition=$(echo $line | awk '{print $7f}')
+ USAGE=$(echo $line | awk '{print $6f}' | cut -d "%" -f1 )
+ PARTITION=$(echo $line | awk '{print $7f}')
  if [ $usage -ge $disk_thrishold ]
  then
    MSG+="High Disk Usage on $PARTITION: $USAGE % <br>"
