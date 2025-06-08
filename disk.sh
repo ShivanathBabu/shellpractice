@@ -1,8 +1,8 @@
 #!/bin/bash
 disk_usage=$(df -hT | grep -v Filesystem)
 disk_thrishold=1
-MSG=" "
-IP=$(curl http://169.254.169.254/latest/meta-data/local-ipv4)
+MSG=""
+IP=$(curl -s http://169.254.169.254/latest/meta-data/local-ipv4)
 
 while IFS= read line
 do
@@ -14,4 +14,4 @@ do
   fi
 done <<< $disk_usage
 
-sh mail.sh "DevOps Team" "Test Alert" "192.168.1.10" "Test Message" "shivanathbabu.kodimyala@gmail.com" "Test Subject"
+sh mail.sh "DevOps Team" "Disk Alert" "$IP" "$MSG" "shivanathbabu.kodimyala@gmail.com" "Disk Alert on $IP"
