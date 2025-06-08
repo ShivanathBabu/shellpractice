@@ -2,7 +2,7 @@
 
 while true; do
 cpu_idle=$(top -b -n2 | grep "Cpu(s)" | tail -1 | awk -F ',' '{print $4}'|awk '{print $1}')
-cpu_utilization=$(echo "scale=1; 100 - $cpu_idle" | bc)
+cpu_utilization=$(echo "100 - $cpu_idle")
 echo "cpu utlization: ${cpu_utilization}%"
 sleep 1
 done
