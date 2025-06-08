@@ -15,10 +15,18 @@
 #  done <<< $file_to_delete
 
 #!/bin/bash
-source_dir=/home/ec2-user/app-logs
 
-find "$source_dir" -name "*.log" -mtime +14 | while IFS= read -r file
+# find "$source_dir" -name "*.log" -mtime +14 | while IFS= read -r file
+# do
+#   echo "Deleting file: $file"
+#   rm -f "$file"
+# done
+
+#!/bin/bash
+source_dir=/home/ec2-user/app-logs
+files_to_delete=$(find $source_dir . -name "*.log" -mtime +14)
+
+while IFS= read -r  filepath
 do
-  echo "Deleting file: $file"
-  rm -f "$file"
-done
+  rm -rf $filepath
+  done <<< $files_to_delete
