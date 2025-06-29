@@ -4,9 +4,9 @@ source_dir=$1
 dest_dir=$2
 days=${3:-14}
 
-logs_folder= "/var/log/script-log"
+logs_folder="/var/log/script-log"
 script_name= $(echo "$0" | cut -d "." -f1)
-log_file= "$logs_folder/$script_name.log"
+log_file="$logs_folder/$script_name.log"
 
 
 checkroot() {
