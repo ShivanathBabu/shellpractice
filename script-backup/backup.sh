@@ -1,11 +1,11 @@
 #!/bin/bash
 userid=$(id -u)
-source_dir= $1
-dest_dir= $2
-days= ${3:-14}
+source_dir=$1
+dest_dir=$2
+days=${3:-14}
 
 logs_folder= "/var/log/script-log"
-script_name= $(echo $0 | cut -d "." -f1)
+script_name= $(echo "$0" | cut -d "." -f1)
 log_file= "$logs_folder/$script_name.log"
 
 
@@ -42,13 +42,13 @@ then
     usage
   fi
   
-if [ ! -d $source_dir ]
+if [ ! -d "$source_dir" ]
 then
     echo "$source_dir doesn't exist"
     exit 1
 fi
 
-if [ ! -d $dest_dir ]
+if [ ! -d "$dest_dir" ]
 then
     echo "$dest_dir doesn't exist"
     exit 1
@@ -69,7 +69,7 @@ then
 
     while IFS= read -r filepath
     do
-        echo "deleting $files | tee -a $log_file"
+        echo "deleting $filepath | tee -a $log_file"
         rm -rf $filepath
     done <<< $files
     echo "sucessfully deleted files $days "
