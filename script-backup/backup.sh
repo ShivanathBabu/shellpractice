@@ -5,7 +5,7 @@ dest_dir=$2
 days=${3:-14}
 
 logs_folder="/var/log/script-log"
-script_name= $(echo "$0" | cut -d "." -f1)
+script_name=$(echo "$0" | cut -d "." -f1)
 log_file="$logs_folder/$script_name.log"
 
 
