@@ -1,6 +1,6 @@
 #!/bin/bash
-old= "hello"
-new= "Update"
+old="hello"
+new="Update"
 
 # loop all .txt files
 for file in *.txt; do
