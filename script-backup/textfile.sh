@@ -14,10 +14,10 @@ echo "file not found"
 exit 1
 fi
 
-cat $file
-| tr -cs '[:alnum:]' '[\n*]' \
-| tr '[:upper:]' '[:lower:]' \
-| sort \
-| uniq -c \
-| sort -nr \
-| head -n5
+cat $file | \
+tr -cs '[:alnum:]' '[\n*]' | \
+tr '[:upper:]' '[:lower:]' | \
+sort | \
+uniq -c | \
+sort -nr | \
+head -n5 | \
