@@ -20,4 +20,4 @@ tr '[:upper:]' '[:lower:]' | \
 sort | \
 uniq -c | \
 sort -nr | \
-head -n5 | \
+head -n5 
