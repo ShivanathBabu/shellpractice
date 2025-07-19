@@ -2,8 +2,9 @@
 old="hello"
 new="Update"
 
+target_dir = "home/ec2/files/data"
 # loop all .txt files
-for file in *.txt; do
+for file in "$target_dir"/*.txt; do
 if [ -f "$file" ]; # check its regular file
 then
 echo "processing $file"
