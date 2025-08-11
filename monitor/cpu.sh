@@ -1,7 +1,7 @@
 #!/bin/bash
 warning=70
 critical=75
-paths= "/"
+paths="/"
 
 for path in $paths 
 do
