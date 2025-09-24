@@ -5,10 +5,9 @@ MSG=""
 
 while IFS= read line
 do
-    usage=$( df -hT | awk '{print $6F}' | cut -d "%" -f1 )
-    partion=$(df -hT | awk '{print $7F}')
-
-if [ $usage -ge $dis_threshold ]
+    usage=$( echo $line | awk '{print $6F}' | cut -d "%" -f1 )
+    partion=$(echo $line | awk '{print $7F}')
+    if [ $usage -ge $dis_threshold ]
 then
     MSG+= "High disk usage on $partion: $usage \n"
 fi
