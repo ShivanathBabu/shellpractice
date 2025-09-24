@@ -5,7 +5,7 @@ MSG=""
 
 while IFS= read line
 do
-    usage=$( df -hT | awk '{print $6F}' | cut -d "%" -F1 )
+    usage=$( df -hT | awk '{print $6F}' | cut -d "%" -f1 )
     partion=$(df -hT | awk '{print $7F}')
 
 if [ $usage -ge $dis_threshold ]
