@@ -1,8 +1,8 @@
 #!/bin/bash
 disk_usage=$(df -hT | grep -v Filesystem)
-dis_threshold = 1
+dis_threshold= 1
 MSG= " "
-while IFS = read -r file
+while IFS = read line
 do
 usage=$( df -hT | awk '{print $6F}' | cut -d "%" -F1 )
 partion=$(df -hT | awk '{print $7F}')
