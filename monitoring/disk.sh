@@ -3,7 +3,7 @@
 disk_usage=$(df -hT | grep -v Filesystem)
 disk_threshold=1
 
-while IFS= read line
+while IFS= read -r line
 do 
     usage=$( echo "$line" | awk '{print $6)' | cut -d "%" -f1 )
     partition=$( echo "$line" | awk '{print $7}')
